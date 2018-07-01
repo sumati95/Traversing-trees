@@ -12,7 +12,6 @@ public class TreeStructure {
         root.right.right = new TreeNode(7);
         root.right.right.right = new TreeNode(10);
         preOrder(root);
-        System.out.println(sumTree(root));
     }
 
     static void preOrder(TreeNode root) {
@@ -36,13 +35,6 @@ public class TreeStructure {
             inOrder(root.left);
             System.out.println(root.data + " ");
             inOrder(root.left);
-        }
-    }
-
-    static int addNodes(TreeNode root) {
-        int sum;
-        if (root != null) {
-            
         }
     }
 }

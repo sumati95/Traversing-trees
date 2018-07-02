@@ -11,31 +11,16 @@ public class TreeStructure {
         root.right.left = new TreeNode(6);
         root.right.right = new TreeNode(7);
         root.right.right.right = new TreeNode(10);
-        preOrder(root);
+        System.out.println(addNodes(root));
     }
 
-    static void preOrder(TreeNode root) {
-        if (root != null) {
-            System.out.print(root.data + " ");
-            preOrder(root.left);
-            preOrder(root.right);
+    static int addNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
         }
-    }
-
-    static void postOrder(TreeNode root) {
-        if (root != null) {
-            postOrder(root.left);
-            postOrder(root.right);
-            System.out.println(root.data + " ");
-        }
-    }
-
-    static void inOrder(TreeNode root) {
-        if (root != null) {
-            inOrder(root.left);
-            System.out.println(root.data + " ");
-            inOrder(root.left);
-        }
+        int lsum = addNodes(root.left);
+        int rsum = addNodes(root.right);
+        return root.data + lsum + rsum;
     }
 }
 
